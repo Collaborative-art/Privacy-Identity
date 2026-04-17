@@ -1,0 +1,37 @@
+{
+  "name": "privacy-identity-xray",
+  "version": "1.0.0",
+  "description": "Privacy & Identity: The X-Ray Protocol Era - A decentralized identity management system",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && cd smart-contracts && npm install && cd ../backend && npm install && cd ../frontend && npm install",
+    "dev:contracts": "cd smart-contracts && npx hardhat node",
+    "deploy:contracts": "cd smart-contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "test:contracts": "cd smart-contracts && npx hardhat test",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "start:dev": "concurrently \"npm run dev:contracts\" \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "keywords": [
+    "privacy",
+    "identity",
+    "blockchain",
+    "zero-knowledge",
+    "decentralized",
+    "self-sovereign",
+    "xray-protocol"
+  ],
+  "author": "X-Ray Protocol Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "smart-contracts",
+    "backend",
+    "frontend"
+  ]
+}
